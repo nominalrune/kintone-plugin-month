@@ -32,4 +32,10 @@ const createConfig = (): kintone.plugin.Storage => ({
   conditions: [getNewCondition()],
 });
 
-export const getNewCondition = (): kintone.plugin.Condition => ({ field: '' });
+export const getNewCondition = (): kintone.plugin.Condition => ({
+  field: '',
+  usesStep: false,
+  step: 10,
+  min: 0,
+  max: 100,
+});

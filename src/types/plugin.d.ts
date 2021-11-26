@@ -6,6 +6,12 @@ declare namespace kintone {
     };
 
     /** プラグインの制御単位の設定情報🔌 */
-    type Condition = { field: string };
+    type Condition = {
+      field: string;
+      usesStep: boolean;
+      step: number;
+      min: number;
+      max: number;
+    };
   }
 }

@@ -1,12 +1,12 @@
 {
   "name": "kintone-plugin-template",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": "ribbit",
   "license": "MIT",
   "scripts": {
     "create-ppk": "kintone-plugin-packer --out dist/plugin-dev.zip plugin",
     "move-ppk": "node scripts/move-ppk.ts",
-    "init": "run-s develop create-ppk move-ppk",
+    "init": "run-s merge-manifest:prod create-ppk move-ppk",
     "bundle:dev": "webpack --config webpack.dev.js",
     "bundle:prod": "webpack --config webpack.prod.js",
     "bundle:watch": "webpack --config webpack.dev.js -w",
@@ -20,6 +20,7 @@
     "lint": "eslint ./src --cache --ext .js,.ts,.tsx"
   },
   "devDependencies": {
+    "@emotion/css": "^11.5.0",
     "@emotion/styled": "11.6.0",
     "@kintone/dts-gen": "5.0.10",
     "@kintone/plugin-packer": "5.0.25",

@@ -4,12 +4,12 @@
   "type": "APP",
   "name": {
     "en": "kintone-plugin-template",
-    "ja": "プラグインテンプレート",
+    "ja": "スライダープラグイン",
     "zh": "插件模板"
   },
   "description": {
     "en": "kintone-plugin-template",
-    "ja": "プラグインテンプレート",
+    "ja": "数値フィールドにスライダーを使った入力を実装します",
     "zh": "插件模板"
   },
   "icon": "image/icon.png",
