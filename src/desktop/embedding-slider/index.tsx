@@ -5,6 +5,7 @@ import { restoreStorage } from '@common/plugin';
 import { css } from '@emotion/css';
 
 import App from './app';
+import { isMobile } from '@common/kintone';
 
 const events: kintone.EventType[] = ['app.record.create.show', 'app.record.edit.show'];
 
@@ -26,9 +27,24 @@ const action: launcher.Action = async (event, pluginId) => {
       return event;
     }
 
+    if (!isMobile()) {
+      const fieldWrapper = document.querySelector(`.field-${fieldId}`);
+
+      if (fieldWrapper) {
+        const width = fieldWrapper.clientWidth;
+
+        fieldWrapper.classList.add(css`
+          width: ${width + 250}px !important;
+        `);
+      }
+    }
+
     wrapper.classList.add(css`
       display: flex;
-      gap: 8px;
+      align-items: center;
+      input {
+        min-width: 60px;
+      }
     `);
 
     const div = document.createElement('div');
@@ -36,7 +52,7 @@ const action: launcher.Action = async (event, pluginId) => {
     div.classList.add(css`
       display: flex;
       position: relative;
-      padding: 0 16px;
+      padding: 0 32px 0 24px;
     `);
 
     const input = wrapper.querySelector('input');

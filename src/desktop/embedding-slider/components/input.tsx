@@ -15,7 +15,7 @@ type Props = ContainerProps &
 const Component: VFCX<Props> = ({ className, condition, value, onValueChange }) => (
   <div {...{ className }}>
     <Slider
-      sx={{ width: 250 }}
+      sx={{ width: 200 }}
       value={value}
       onChange={(_, value) => onValueChange(value as number)}
       valueLabelDisplay='auto'
