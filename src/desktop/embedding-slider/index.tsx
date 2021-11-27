@@ -55,9 +55,11 @@ const action: launcher.Action = async (event, pluginId) => {
       padding: 0 32px 0 24px;
     `);
 
-    const input = wrapper.querySelector('input');
+    const fieldValue = event.record[condition.field].value;
 
-    render(<App {...{ condition, input }} />, div);
+    const initialValue = isFinite(fieldValue) ? Number(fieldValue) : condition.min;
+
+    render(<App {...{ condition, initialValue }} />, div);
   }
 
   console.log('プラグインが有効です', { pluginId, event, config });

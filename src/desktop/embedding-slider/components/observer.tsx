@@ -12,23 +12,13 @@ const Container: VFC = () => {
       return;
     }
 
-    console.log('initializing');
+    try {
+      const { record } = getCurrentRecord();
 
-    const { record } = getCurrentRecord();
+      record[condition.field].value = String(value);
 
-    setValue(Number(record[condition.field].value || 0));
-  }, [condition]);
-
-  useEffect(() => {
-    if (!condition?.field) {
-      return;
-    }
-
-    const { record } = getCurrentRecord();
-
-    record[condition.field].value = String(value);
-
-    setCurrentRecord({ record });
+      setCurrentRecord({ record });
+    } catch (error) {}
   }, [value]);
 
   return null;
