@@ -10,3 +10,7 @@
 </p>
 
 数値フィールドにスライダーを使った入力を実装します。
+
+[詳細はこちら](https://ribbit.konomi.app/blog/kintone-plugin-slider/)
+
+[プラグイン一覧](https://ribbit.konomi.app/kintone-plugin/)
