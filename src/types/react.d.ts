@@ -1,6 +1,11 @@
 import React from 'react';
 
 declare module 'react' {
+  type FCwC<P = Record<string, unknown>> = React.FunctionComponent<P & { children?: ReactNode }>;
+  type FCwCX<P = Record<string, unknown>> = React.FunctionComponent<
+    P & { children?: ReactNode; className?: string }
+  >;
+
   /** classNameを追加したファンクションコンポーネント型 */
   type FCX<P = Record<string, unknown>> = React.FunctionComponent<P & { className?: string }>;
 

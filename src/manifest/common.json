@@ -1,21 +1,21 @@
 {
   "manifest_version": 1,
-  "version": 1,
+  "version": 100,
   "type": "APP",
   "name": {
-    "en": "kintone-plugin-template",
+    "en": "kintone-plugin-slider",
     "ja": "スライダープラグイン",
     "zh": "插件模板"
   },
   "description": {
-    "en": "kintone-plugin-template",
+    "en": "Implement the input using a slider in the numerical field",
     "ja": "数値フィールドにスライダーを使った入力を実装します",
     "zh": "插件模板"
   },
   "icon": "image/icon.png",
   "homepage_url": {
-    "ja": "https://ribbit.work/",
-    "en": "https://ribbit.work/"
+    "ja": "https://ribbit.konomi.app",
+    "en": "https://ribbit.konomi.app"
   },
   "desktop": {
     "js": ["https://cdn.jsdelivr.net/gh/local-bias/kintone-cdn@latest/dist/desktop.js"],
