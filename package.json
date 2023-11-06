@@ -27,7 +27,7 @@
     "@kintone/plugin-packer": "8.0.1",
     "@kintone/plugin-uploader": "9.0.1",
     "@kintone/rest-api-client": "5.0.3",
-    "@kintone/webpack-plugin-kintone-plugin": "8.0.1",
+    "@kintone/webpack-plugin-kintone-plugin": "8.0.2",
     "@mui/icons-material": "5.14.15",
     "@mui/material": "5.14.15",
     "@types/luxon": "3.3.3",
