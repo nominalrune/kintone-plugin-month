@@ -574,10 +574,10 @@
     os-locale "^5.0.0"
     puppeteer "^21.4.1"
 
-"@kintone/rest-api-client@5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@kintone/rest-api-client/-/rest-api-client-5.0.4.tgz#99288b6f484c2912eb942a36c7e4540764bb36b1"
-  integrity sha512-ZOkyHMVLal1pLS52IArMNLuCW3mPnps00iu78DWtUiTGW5PCrI2T3+QLUYn21i/4QzXgn3UJGuTAp/qDK7GH9w==
+"@kintone/rest-api-client@5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@kintone/rest-api-client/-/rest-api-client-5.0.5.tgz#b7bc9065057f570cd8c4788f7e3b01f2940682d9"
+  integrity sha512-7aGAsnR+t1QxJ1CJcSIq6OzI2RNPrUW3z02oyfr2QBNflchUbRPcsm1mmEiOua3TzgJO8Ip8MJ25CzK8cJufTQ==
   dependencies:
     axios "^1.6.0"
     core-js "^3.33.3"
