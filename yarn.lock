@@ -515,14 +515,6 @@
     lodash "^4.17.21"
     prettier "^3.1.1"
 
-"@kintone/plugin-manifest-validator@^10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@kintone/plugin-manifest-validator/-/plugin-manifest-validator-10.0.0.tgz#98edb7b157d22d13dd104c1334a76a964040805f"
-  integrity sha512-OMeHNgPP81uEbCx2C/KijqXeYNyvMp5UvQkydgoafjU0huDisV012vJQIQByp8H988fxGFTV/m/AvoYhZYJzCg==
-  dependencies:
-    ajv "^8.12.0"
-    bytes "^3.1.2"
-
 "@kintone/plugin-manifest-validator@^10.1.0":
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/@kintone/plugin-manifest-validator/-/plugin-manifest-validator-10.1.0.tgz#8c687bbc8603075868cf0c50d3fc0ebae68d7505"
@@ -531,28 +523,12 @@
     ajv "^8.12.0"
     bytes "^3.1.2"
 
-"@kintone/plugin-packer@8.0.3":
+"@kintone/plugin-packer@8.0.3", "@kintone/plugin-packer@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@kintone/plugin-packer/-/plugin-packer-8.0.3.tgz#9ef24a479f1a1f9114ed203c4f52497e220a282d"
   integrity sha512-xKkFImgKbgpe2AKcntomOdMXj1RIZJcXwwCvpKUjfpcS8Nn37kwSlsokdj8LJ8OBIJp6W4ohg9mn+6koc8FddQ==
   dependencies:
     "@kintone/plugin-manifest-validator" "^10.1.0"
-    chokidar "^3.5.3"
-    debug "^4.3.4"
-    denodeify "^1.2.1"
-    meow "^9.0.0"
-    mkdirp "^3.0.1"
-    node-rsa "~1.1.1"
-    stream-buffers "^3.0.2"
-    yauzl "^2.10.0"
-    yazl "^2.5.1"
-
-"@kintone/plugin-packer@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@kintone/plugin-packer/-/plugin-packer-8.0.1.tgz#1d9c1bb82563757d72f36acef77dc00993817e50"
-  integrity sha512-rW6TBiqzJ6/r+8iFB2gJnBuVSyXLlK1yvh6vWbfNdvsvQxvLZY2dwIFNHag4naomxocKy/RXeKIR9ooVblgG1A==
-  dependencies:
-    "@kintone/plugin-manifest-validator" "^10.0.0"
     chokidar "^3.5.3"
     debug "^4.3.4"
     denodeify "^1.2.1"
@@ -586,12 +562,12 @@
     mime "^3.0.0"
     qs "^6.11.2"
 
-"@kintone/webpack-plugin-kintone-plugin@8.0.2":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@kintone/webpack-plugin-kintone-plugin/-/webpack-plugin-kintone-plugin-8.0.2.tgz#b8891f8405af1406d36f9db791f821bcae910e25"
-  integrity sha512-KFCBcCj1Y4rhwplBaoHj2OZVkp5V2uQf5PohUG0jPMhWYasZTYmsm85e+Vz4z5v5rWjxSIM67l2h0jgPmj+lUA==
+"@kintone/webpack-plugin-kintone-plugin@8.0.4":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@kintone/webpack-plugin-kintone-plugin/-/webpack-plugin-kintone-plugin-8.0.4.tgz#d5370fe0f4048dd2e88b8b035c65fc3cc3959c74"
+  integrity sha512-yPGvYSXohpMy+2c+fzAjDRJhP2IxCVUUbYDHs9BVZr+i3c2QzbR/LN1zSOKZcqzaj2sevnsHPGs9Co5nRko26g==
   dependencies:
-    "@kintone/plugin-packer" "^8.0.1"
+    "@kintone/plugin-packer" "^8.0.3"
     mkdirp "^3.0.1"
 
 "@mui/base@5.0.0-beta.27":
