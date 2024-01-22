@@ -529,7 +529,23 @@
     ajv "^8.12.0"
     bytes "^3.1.2"
 
-"@kintone/plugin-packer@8.0.3", "@kintone/plugin-packer@^8.0.3":
+"@kintone/plugin-packer@8.0.4":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@kintone/plugin-packer/-/plugin-packer-8.0.4.tgz#a73b2687b52f6af00d4f5dc5b3964c12652780a3"
+  integrity sha512-+kY5BGd/Dyu/jp+LDrFvqC9fp5oUO3d7tsC6335TnSgnoX4VccYhwPxDiPdvLQwS5PrqKIuPmSy5bIvR98Timw==
+  dependencies:
+    "@kintone/plugin-manifest-validator" "^10.1.0"
+    chokidar "^3.5.3"
+    debug "^4.3.4"
+    denodeify "^1.2.1"
+    meow "^9.0.0"
+    mkdirp "^3.0.1"
+    node-rsa "~1.1.1"
+    stream-buffers "^3.0.2"
+    yauzl "^2.10.0"
+    yazl "^2.5.1"
+
+"@kintone/plugin-packer@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@kintone/plugin-packer/-/plugin-packer-8.0.3.tgz#9ef24a479f1a1f9114ed203c4f52497e220a282d"
   integrity sha512-xKkFImgKbgpe2AKcntomOdMXj1RIZJcXwwCvpKUjfpcS8Nn37kwSlsokdj8LJ8OBIJp6W4ohg9mn+6koc8FddQ==
