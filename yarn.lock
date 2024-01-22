@@ -584,10 +584,10 @@
     mime "^3.0.0"
     qs "^6.11.2"
 
-"@kintone/webpack-plugin-kintone-plugin@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@kintone/webpack-plugin-kintone-plugin/-/webpack-plugin-kintone-plugin-8.0.4.tgz#d5370fe0f4048dd2e88b8b035c65fc3cc3959c74"
-  integrity sha512-yPGvYSXohpMy+2c+fzAjDRJhP2IxCVUUbYDHs9BVZr+i3c2QzbR/LN1zSOKZcqzaj2sevnsHPGs9Co5nRko26g==
+"@kintone/webpack-plugin-kintone-plugin@8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@kintone/webpack-plugin-kintone-plugin/-/webpack-plugin-kintone-plugin-8.0.5.tgz#0df864e2abe9ba45a2eb0720791e3b1771d83d83"
+  integrity sha512-yh0D46KztazeN6BtdGbzyK5Bp6MISTT7wRPh+ywJxfp1UgDYSeZeF7P98LFrW0OcHqpK4JkpK+akndaSIErvJg==
   dependencies:
     "@kintone/plugin-packer" "^8.0.3"
     mkdirp "^3.0.1"
