@@ -572,15 +572,15 @@
     os-locale "^5.0.0"
     puppeteer "^21.7.0"
 
-"@kintone/rest-api-client@5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@kintone/rest-api-client/-/rest-api-client-5.0.6.tgz#7dd62f2e7099fa9a103e252e3ae2625a5d43b1ea"
-  integrity sha512-UQWMkerCu10K5HUcPeGc4aY8ckk5NHqeVcx3rnVae4+sHsjYuue1qH2Rob3lGX1FNdtUpxs208yvFJhud+6CvQ==
+"@kintone/rest-api-client@5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@kintone/rest-api-client/-/rest-api-client-5.0.7.tgz#703fae02e74ff5c9aff66c17b2903988817b720c"
+  integrity sha512-4zI7wZ8sYf6SMXiGw3+3ZDLUhKv2ZYPHM9Wxp0PyLPLEETHM/t34kmMBQRLemZbgYyQv3GTOp7gRUP8vHH91PQ==
   dependencies:
     axios "^1.6.5"
-    core-js "^3.35.0"
+    core-js "^3.35.1"
     form-data "^4.0.0"
-    js-base64 "^3.7.5"
+    js-base64 "^3.7.6"
     mime "^3.0.0"
     qs "^6.11.2"
 
@@ -1816,7 +1816,7 @@ convert-source-map@^1.5.0:
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.9.0.tgz#7faae62353fb4213366d0ca98358d22e8368b05f"
   integrity sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==
 
-core-js@^3.35.0:
+core-js@^3.35.1:
   version "3.35.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.35.1.tgz#9c28f8b7ccee482796f8590cc8d15739eaaf980c"
   integrity sha512-IgdsbxNyMskrTFxa9lWHyMwAJU5gXOPP+1yO+K59d50VLVAIDAbs7gIv705KzALModfK3ZrSZTPNpC0PQgIZuw==
@@ -3609,10 +3609,10 @@ jest-worker@^27.4.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-js-base64@^3.7.5:
-  version "3.7.5"
-  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.7.5.tgz#21e24cf6b886f76d6f5f165bfcd69cc55b9e3fca"
-  integrity sha512-3MEt5DTINKqfScXKfJFrRbxkrnk2AxPWGBL/ycjz4dK8iqiSJ06UxD8jh8xuh6p10TX4t2+7FsBYVxxQbMg+qA==
+js-base64@^3.7.6:
+  version "3.7.6"
+  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.7.6.tgz#6ccb5d761b48381fd819f9ce04998866dbcbbc99"
+  integrity sha512-NPrWuHFxFUknr1KqJRDgUQPexQF0uIJWjeT+2KjEePhitQxQEx5EJBG1lVn5/hc8aLycTpXrDOgPQ6Zq+EDiTA==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
