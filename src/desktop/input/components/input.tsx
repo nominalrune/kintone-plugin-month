@@ -1,8 +1,7 @@
-import React, { ChangeEventHandler, VFC, VFCX } from 'react';
+import React, { ChangeEvent,ChangeEventHandler, VFC, VFCX } from 'react';
 import styled from '@emotion/styled';
 import { pluginConditionState, valueState } from '../states';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { Slider } from '@mui/material';
 
 type ContainerProps = Readonly<{}>;
 type Props = ContainerProps &
@@ -14,7 +13,13 @@ type Props = ContainerProps &
 
 const Component: VFCX<Props> = ({ className, condition, value, onValueChange }) => (
   <div {...{ className }}>
-    <Slider
+    <input
+    value={value}
+    min={condition.min}
+    max={condition.max}
+    onChange={(e:ChangeEvent<HTMLInputElement>) => onValueChange(+e.target.value)}
+    />
+    {/* <Slider
       sx={{ width: 200 }}
       value={value}
       onChange={(_, value) => onValueChange(value as number)}
@@ -23,7 +28,7 @@ const Component: VFCX<Props> = ({ className, condition, value, onValueChange }) 
       marks={condition.usesStep}
       min={condition.min}
       max={condition.max}
-    />
+    /> */}
   </div>
 );
 

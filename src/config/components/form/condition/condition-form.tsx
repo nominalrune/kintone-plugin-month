@@ -1,20 +1,17 @@
 import React, { ChangeEventHandler, VFC, VFCX } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from '@emotion/styled';
-import produce from 'immer';
-import { Properties } from '@kintone/rest-api-client/lib/client/types';
+import {produce} from 'immer';
+import { Properties } from '@kintone/rest-api-client/lib/src/client/types';
 
 import { appFieldsState, storageState } from '../../../states';
-import { FormControlLabel, MenuItem, Slider, Switch, TextField } from '@mui/material';
 
 type ContainerProps = { condition: kintone.plugin.Condition; index: number };
 type Props = ContainerProps & {
   appFields: Properties;
-  onFieldChange: ChangeEventHandler<HTMLInputElement>;
+  onFieldChange: ChangeEventHandler<HTMLInputElement|HTMLSelectElement>;
   onMinChange: ChangeEventHandler<HTMLInputElement>;
   onMaxChange: ChangeEventHandler<HTMLInputElement>;
-  onStepChange: ChangeEventHandler<HTMLInputElement>;
-  onUsesStepChange: (checked: boolean) => void;
 };
 
 const Component: VFCX<Props> = ({
@@ -24,71 +21,36 @@ const Component: VFCX<Props> = ({
   onFieldChange,
   onMinChange,
   onMaxChange,
-  onStepChange,
-  onUsesStepChange,
 }) => (
   <div {...{ className }}>
     <div>
       <h3>対象フィールド</h3>
-      <TextField
-        select
+      <label>フィールド名<select
         value={condition.field}
-        label='フィールド名'
         onChange={onFieldChange}
         className='input'
       >
         {Object.values(appFields).map(({ code, label }, i) => (
-          <MenuItem key={i} value={code}>
+          <option key={i} value={code}>
             {label}
-          </MenuItem>
+          </option>
         ))}
-      </TextField>
+      </select></label>
     </div>
     <div>
-      <h3>スライダーの最小値と最大値</h3>
-      <TextField
-        type='number'
+      <h3>年月の最小値と最大値</h3>
+      <label>最小値<input
+        type='month'
         value={condition.min}
-        label='最小値'
         onChange={onMinChange}
         className='input'
-      />{' '}
-      <TextField
-        type='number'
+      /></label>
+      <label>最大値<input
+        type='month'
         value={condition.max}
-        label='最大値'
         onChange={onMaxChange}
         className='input'
-      />
-    </div>
-    <div>
-      <h3>スライダーの単位</h3>
-      <FormControlLabel
-        control={<Switch color='primary' checked={condition.usesStep} />}
-        onChange={(_, checked) => onUsesStepChange(checked)}
-        label='スライダーを操作できる単位を設定する'
-      />
-      {condition.usesStep && (
-        <TextField
-          type='number'
-          value={condition.step}
-          label='単位'
-          onChange={onStepChange}
-          className='input'
-        />
-      )}
-    </div>
-    <div>
-      <h3>動作サンプル</h3>
-      <Slider
-        sx={{ width: 250 }}
-        defaultValue={30}
-        valueLabelDisplay='auto'
-        step={condition.usesStep && condition.step ? condition.step : 1}
-        marks={condition.usesStep}
-        min={condition.min}
-        max={condition.max}
-      />
+      /></label>
     </div>
   </div>
 );
@@ -147,29 +109,22 @@ const Container: VFC<ContainerProps> = ({ condition, index }) => {
     setConditionProps('field', e.target.value);
   };
 
-  const onStepChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setConditionProps('step', Number(e.target.value));
-  };
-
   const onMinChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const num = Number(e.target.value);
-
-    if (condition.max < num) {
-      setConditionProps('max', num);
+    const val = e.target.value;
+    if (condition.max < val) {
+      setConditionProps('max', val);
     }
-    setConditionProps('min', num);
+    setConditionProps('min', val);
   };
 
   const onMaxChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const num = Number(e.target.value);
+    const val = e.target.value;
 
-    if (condition.min > num) {
-      setConditionProps('min', num);
+    if (condition.min > val) {
+      setConditionProps('min', val);
     }
-    setConditionProps('max', Number(e.target.value));
+    setConditionProps('max', val);
   };
-
-  const onUsesStepChange = (checked: boolean) => onSwitchChange(checked, 'usesStep');
 
   return (
     <StyledComponent
@@ -178,10 +133,8 @@ const Container: VFC<ContainerProps> = ({ condition, index }) => {
         index,
         appFields,
         onFieldChange,
-        onStepChange,
         onMinChange,
         onMaxChange,
-        onUsesStepChange,
       }}
     />
   );

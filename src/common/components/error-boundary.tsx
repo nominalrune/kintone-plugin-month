@@ -1,7 +1,6 @@
 import React, { FCwC, FCwCX } from 'react';
 import styled from '@emotion/styled';
 import { ErrorBoundary as ErrBoundary, FallbackProps } from 'react-error-boundary';
-import { Button } from '@mui/material';
 import { URL_HOMEPAGE } from '@common/statics';
 
 const Component: FCwCX<FallbackProps> = ({ className, error, resetErrorBoundary }) => (
@@ -56,12 +55,11 @@ const Component: FCwCX<FallbackProps> = ({ className, error, resetErrorBoundary 
       <div>
         <p>予期しないエラーが発生しました</p>
         <p>リトライしても解決しない場合は、開発者までお問い合わせください。</p>
-        <a href={URL_HOMEPAGE}>開発者HP</a>
         <p className='error'>{error.message}</p>
       </div>
-      <Button variant='contained' color='primary' size='large' onClick={resetErrorBoundary}>
+      <button onClick={resetErrorBoundary}>
         リトライ
-      </Button>
+      </button>
     </div>
   </div>
 );

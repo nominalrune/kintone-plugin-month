@@ -1,10 +1,10 @@
 (async ([_, __, envName]) => {
   const fs = require('fs');
 
-  const root = __dirname.replace('\\scripts', '');
+  const root = __dirname.replace('/scripts', '');
 
-  const baseText = await fs.readFileSync(`${root}\\src\\manifest\\common.json`, 'utf-8');
-  const envText = await fs.readFileSync(`${root}\\src\\manifest\\${envName}.json`, 'utf-8');
+  const baseText = await fs.readFileSync(`${root}/src/manifest/common.json`, 'utf-8');
+  const envText = await fs.readFileSync(`${root}/src/manifest/${envName}.json`, 'utf-8');
 
   const base = JSON.parse(baseText);
   const env = JSON.parse(envText);
@@ -27,5 +27,5 @@
     }, {});
   };
 
-  fs.writeFileSync(`${root}\\plugin\\manifest.json`, JSON.stringify(merged(base, env)));
+  fs.writeFileSync(`${root}/plugin/manifest.json`, JSON.stringify(merged(base, env)));
 })(process.argv);

@@ -3,31 +3,29 @@
   "version": 100,
   "type": "APP",
   "name": {
-    "en": "kintone-plugin-slider",
-    "ja": "スライダープラグイン",
-    "zh": "插件模板"
+    "en": "kintone-plugin-month",
+    "ja": "年月入力プラグイン",
+    "zh": "kintone-plugin-month"
   },
   "description": {
-    "en": "Implement the input using a slider in the numerical field",
-    "ja": "数値フィールドにスライダーを使った入力を実装します",
-    "zh": "插件模板"
+    "en": "Implement the input using a month in the string field",
+    "ja": "文字列フィールドに年月入力を実装します",
+    "zh": "Implement the input using a month in the string field"
   },
-  "icon": "image/icon.png",
+  "icon": "image/month.png",
   "homepage_url": {
-    "ja": "https://ribbit.konomi.app",
-    "en": "https://ribbit.konomi.app"
   },
   "desktop": {
-    "js": ["https://cdn.jsdelivr.net/gh/local-bias/kintone-cdn@latest/dist/desktop.js"],
+    "js": [],
     "css": []
   },
   "mobile": {
-    "js": ["https://cdn.jsdelivr.net/gh/local-bias/kintone-cdn@latest/dist/desktop.js"],
+    "js": [],
     "css": []
   },
   "config": {
     "html": "html/config.html",
-    "js": ["https://cdn.jsdelivr.net/gh/local-bias/kintone-cdn@latest/dist/config.js"],
+    "js": [],
     "css": [],
     "required_params": []
   }

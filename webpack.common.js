@@ -1,6 +1,4 @@
 const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
 module.exports = {
   entry: {
     desktop: './src/desktop/index.ts',
@@ -20,10 +18,9 @@ module.exports = {
         loader: 'esbuild-loader',
         options: {
           loader: 'tsx',
-          target: 'es2015',
+          target: 'es2020'
         },
       },
     ],
   },
-  plugins: [new ForkTsCheckerWebpackPlugin()],
 };

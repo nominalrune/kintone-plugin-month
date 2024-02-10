@@ -1,8 +1,6 @@
-import React, { VFC } from 'react';
+  import React, { VFC } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { produce } from 'immer';
-import { IconButton } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
 
 import { storageState } from '../../states';
 
@@ -10,9 +8,9 @@ type ContainerProps = Readonly<{ index: number }>;
 type Props = Readonly<{ onClick: () => void }>;
 
 const Component: VFC<Props> = ({ onClick }) => (
-  <IconButton {...{ onClick }}>
-    <DeleteIcon fontSize='small' />
-  </IconButton>
+  <button onClick={onClick}>
+    X
+  </button>
 );
 
 const Container: VFC<ContainerProps> = ({ index }) => {

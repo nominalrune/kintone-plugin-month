@@ -1,5 +1,4 @@
 import React, { memo, useState, VFC, VFCX } from 'react';
-import { Accordion, AccordionActions, AccordionDetails, AccordionSummary } from '@mui/material';
 
 import ConditionForm from './condition-form';
 import ConditionDeletionButton from '../condition-deletion-button';
@@ -11,15 +10,16 @@ type Props = ContainerProps & {
 };
 
 const Component: VFCX<Props> = ({ className, condition, index, expanded, onChange }) => (
-  <Accordion {...{ expanded, onChange, className }} variant='outlined' square>
-    <AccordionSummary>設定{index + 1}</AccordionSummary>
-    <AccordionDetails>
+  <details {...{ expanded, onChange, className }} variant='outlined' square>
+    <summary>設定{index + 1}</summary>
+    <div>
       <ConditionForm {...{ condition, index }} />
-    </AccordionDetails>
-    <AccordionActions>
+    </div>
+    <hr/>
+    <div>
       <ConditionDeletionButton {...{ index }} />
-    </AccordionActions>
-  </Accordion>
+    </div>
+  </details>
 );
 
 const Container: VFC<ContainerProps> = memo(({ condition, index }) => {

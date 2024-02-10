@@ -2,9 +2,6 @@ import React, { VFC, VFCX } from 'react';
 import { useRecoilCallback } from 'recoil';
 import styled from '@emotion/styled';
 import { useSnackbar } from 'notistack';
-import { Button } from '@mui/material';
-import SaveIcon from '@mui/icons-material/Save';
-import SettingsBackupRestoreIcon from '@mui/icons-material/SettingsBackupRestore';
 
 import { storeStorage } from '@common/plugin';
 
@@ -17,22 +14,16 @@ type Props = {
 
 const Component: VFCX<Props> = ({ className, onSaveButtonClick, onBackButtonClick }) => (
   <div {...{ className }}>
-    <Button
-      variant='contained'
-      color='primary'
+    <button
       onClick={onSaveButtonClick}
-      startIcon={<SaveIcon />}
     >
       設定を保存
-    </Button>
-    <Button
-      variant='contained'
-      color='inherit'
+    </button>
+    <button
       onClick={onBackButtonClick}
-      startIcon={<SettingsBackupRestoreIcon />}
     >
       プラグイン一覧へ戻る
-    </Button>
+    </button>
   </div>
 );
 
@@ -62,9 +53,9 @@ const Container: VFC = () => {
         enqueueSnackbar('設定を保存しました', {
           variant: 'success',
           action: (
-            <Button color='inherit' onClick={onBackButtonClick}>
+            <button color='inherit' onClick={onBackButtonClick}>
               プラグイン一覧に戻る
-            </Button>
+            </button>
           ),
         });
       },

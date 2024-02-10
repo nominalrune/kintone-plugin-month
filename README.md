@@ -1,16 +1,9 @@
 <h1 align="center">
-  <p align="center">Kintone スライダープラグイン</p>
+  <p align="center">Kintone 年月入力プラグイン</p>
 </h1>
 
 <p align="left">
- <img src="https://data.jsdelivr.com/v1/package/gh/local-bias/kintone-plugin-slider/badge" />
- <a href="https://twitter.com/lbribbit"><img src="https://img.shields.io/twitter/follow/lbribbit?logo=twitter&style=flat-square" align="right" alt="Twitter Follow" /></a>
- <a href= "https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code%20style-prettier-orange?style=flat-square"></a>
 <a href="#license"><img src="https://img.shields.io/github/license/local-bias/kintone-plugin-slider?style=flat-square"></a>
 </p>
 
-数値フィールドにスライダーを使った入力を実装します。
-
-[詳細はこちら](https://ribbit.konomi.app/blog/kintone-plugin-slider/)
-
-[プラグイン一覧](https://ribbit.konomi.app/kintone-plugin/)
+文字列フィールドにtype=monthの入力を実装します。

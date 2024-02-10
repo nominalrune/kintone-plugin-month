@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 (async () => {
-  const root = __dirname.replace('\\scripts', '');
+  const root = __dirname.replace('/scripts', '');
 
-  const distPath = `${root}\\private.ppk`;
+  const distPath = `${root}/private.ppk`;
 
   fs.readdir('./dist', (err, files) => {
     const target = files.filter((file) => file.indexOf('.ppk') !== -1);
@@ -15,7 +15,7 @@ const path = require('path');
     }
     const ppk = target[0];
 
-    const ppkPath = `${root}\\dist\\${ppk}`;
+    const ppkPath = `${root}/dist/${ppk}`;
 
     fs.rename(ppkPath, distPath, (err) => {
       if (err) {
