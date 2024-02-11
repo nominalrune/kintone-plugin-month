@@ -1,7 +1,6 @@
 import React, { FCwC, FCwCX } from 'react';
 import styled from '@emotion/styled';
 import { ErrorBoundary as ErrBoundary, FallbackProps } from 'react-error-boundary';
-import { URL_HOMEPAGE } from '@common/statics';
 
 const Component: FCwCX<FallbackProps> = ({ className, error, resetErrorBoundary }) => (
   <div {...{ className }}>

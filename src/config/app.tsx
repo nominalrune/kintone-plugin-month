@@ -1,6 +1,6 @@
 import React, { Suspense, VFC } from 'react';
 import { RecoilRoot } from 'recoil';
-import { SnackbarProvider } from 'notistack';
+// import { SnackbarProvider } from 'notistack';
 
 import { restoreStorage } from '@common/plugin';
 import { ErrorBoundary } from '@common/components/error-boundary';
@@ -20,12 +20,12 @@ const Component: VFC<{ pluginId: string }> = ({ pluginId }) => (
       }}
     >
       <ErrorBoundary>
-        <SnackbarProvider maxSnack={1}>
+        {/* <SnackbarProvider maxSnack={1}> */}
           <Suspense fallback={<Loading label='設定情報を取得しています' />}>
             <Form />
             <Footer />
           </Suspense>
-        </SnackbarProvider>
+        {/* </SnackbarProvider> */}
       </ErrorBoundary>
     </RecoilRoot>
   </>

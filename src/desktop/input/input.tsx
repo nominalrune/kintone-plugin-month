@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
-import { getCurrentRecord, setCurrentRecord } from '@common/kintone';
+// import { getCurrentRecord, setCurrentRecord } from '@common/kintone';
 
 type Props = { condition: kintone.plugin.Condition|null; initialValue: string };
 const Container = ( {condition, initialValue}:Props) => {
