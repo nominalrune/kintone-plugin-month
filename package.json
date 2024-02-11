@@ -1,6 +1,6 @@
 {
-  "name": "kintone-plugin-slider",
-  "version": "1.0.0",
+  "name": "kintone-plugin-month",
+  "version": "0.1.0",
   "author": "ribbit",
   "license": "MIT",
   "scripts": {

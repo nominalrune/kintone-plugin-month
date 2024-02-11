@@ -1,15 +1,15 @@
 import React, { ChangeEventHandler, VFC, VFCX } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from '@emotion/styled';
-import {produce} from 'immer';
+import { produce } from 'immer';
 import { Properties } from '@kintone/rest-api-client/lib/src/client/types';
 
 import { appFieldsState, storageState } from '../../../states';
 
-type ContainerProps = { condition: kintone.plugin.Condition; index: number };
+type ContainerProps = { condition: kintone.plugin.Condition; index: number; };
 type Props = ContainerProps & {
   appFields: Properties;
-  onFieldChange: ChangeEventHandler<HTMLInputElement|HTMLSelectElement>;
+  onFieldChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
   onMinChange: ChangeEventHandler<HTMLInputElement>;
   onMaxChange: ChangeEventHandler<HTMLInputElement>;
 };
@@ -25,17 +25,19 @@ const Component: VFCX<Props> = ({
   <div {...{ className }}>
     <div>
       <h3>対象フィールド</h3>
-      <label>フィールド名<select
-        value={condition.field}
-        onChange={onFieldChange}
-        className='input'
-      >
-        {Object.values(appFields).map(({ code, label }, i) => (
-          <option key={i} value={code}>
-            {label}
-          </option>
-        ))}
-      </select></label>
+      <label>フィールド名
+        <select
+          value={condition.field}
+          onChange={onFieldChange}
+          className='input gaia-argoui-select'
+        >
+          {Object.values(appFields).map(({ code, label }, i) => (
+            <option className="gaia-argoui-select-label" key={i} value={code}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
     <div>
       <h3>年月の最小値と最大値</h3>
@@ -43,13 +45,13 @@ const Component: VFCX<Props> = ({
         type='month'
         value={condition.min}
         onChange={onMinChange}
-        className='input'
+        className='input input-text-cybozu'
       /></label>
       <label>最大値<input
         type='month'
         value={condition.max}
         onChange={onMaxChange}
-        className='input'
+        className='input input-text-cybozu'
       /></label>
     </div>
   </div>
@@ -86,21 +88,13 @@ const Container: VFC<ContainerProps> = ({ condition, index }) => {
   const appFields = useRecoilValue(appFieldsState);
   const setStorage = useSetRecoilState(storageState);
 
-  const setConditionProps = <T extends keyof kintone.plugin.Condition>(
+  function setConditionProps<T extends keyof kintone.plugin.Condition>(
     key: T,
     value: kintone.plugin.Condition[T]
-  ) => {
+  ) {
     setStorage((_, _storage = _!) =>
       produce(_storage, (draft) => {
         draft.conditions[index][key] = value;
-      })
-    );
-  };
-
-  const onSwitchChange = (checked: boolean, option: keyof kintone.plugin.Condition) => {
-    setStorage((_, _storage = _!) =>
-      produce(_storage, (draft) => {
-        draft.conditions[index][option] = checked as never;
       })
     );
   };

@@ -1,7 +1,7 @@
 import React, { VFC, VFCX } from 'react';
 import { useRecoilCallback } from 'recoil';
 import styled from '@emotion/styled';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 
 import { storeStorage } from '@common/plugin';
 
@@ -15,11 +15,13 @@ type Props = {
 const Component: VFCX<Props> = ({ className, onSaveButtonClick, onBackButtonClick }) => (
   <div {...{ className }}>
     <button
+      className="save"
       onClick={onSaveButtonClick}
     >
       設定を保存
     </button>
     <button
+      className="save"
       onClick={onBackButtonClick}
     >
       プラグイン一覧へ戻る
@@ -35,12 +37,30 @@ const StyledComponent = styled(Component)`
   border-top: 1px solid #eee;
 
   button {
-    margin: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 16px;
+    min-width: 163px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+  }
+  button.save {
+    border: 1px solid #e3e7e8;
+    background-color: #3498db;
+    box-shadow: 1px 1px 1px #fff inset;
+    color: #fff;
+  }
+  button.cancel{
+    border: 1px solid #e3e7e8;
+    background-color: #f7f9fa;
+    box-shadow: 1px 1px 1px #fff inset;
+    color: #3498db;
   }
 `;
 
 const Container: VFC = () => {
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const onBackButtonClick = () => history.back();
 
@@ -50,14 +70,7 @@ const Container: VFC = () => {
         const storage = await snapshot.getPromise(storageState);
 
         storeStorage(storage!, () => true);
-        enqueueSnackbar('設定を保存しました', {
-          variant: 'success',
-          action: (
-            <button color='inherit' onClick={onBackButtonClick}>
-              プラグイン一覧に戻る
-            </button>
-          ),
-        });
+        onBackButtonClick();
       },
     []
   );

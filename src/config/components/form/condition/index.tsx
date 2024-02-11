@@ -10,7 +10,7 @@ type Props = ContainerProps & {
 };
 
 const Component: VFCX<Props> = ({ className, condition, index, expanded, onChange }) => (
-  <details {...{ expanded, onChange, className }} variant='outlined' square>
+  <details {...{ expanded, onChange, className }} open={true}>
     <summary>設定{index + 1}</summary>
     <div>
       <ConditionForm {...{ condition, index }} />
@@ -22,7 +22,7 @@ const Component: VFCX<Props> = ({ className, condition, index, expanded, onChang
   </details>
 );
 
-const Container: VFC<ContainerProps> = memo(({ condition, index }) => {
+const Container = memo(({ condition, index }:ContainerProps) => {
   const [expanded, setExpanded] = useState<boolean>(index === 0);
 
   const onChange = () => setExpanded((_expanded) => !_expanded);

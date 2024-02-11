@@ -1,13 +1,13 @@
-import React from 'react';
-import { render } from 'react-dom';
+// import React from 'react';
 import { getFieldId } from '@common/cybozu';
 import { restoreStorage } from '@common/plugin';
-import { css } from '@emotion/css';
-
-import App from './app';
-import { isMobile } from '@common/kintone';
-
-const events: kintone.EventType[] = ['app.record.create.show', 'app.record.edit.show'];
+// import Input from './input'
+// import {createRoot} from "react-dom/client";
+const events: kintone.EventType[] = [
+  'app.record.create.show',
+  'app.record.edit.show',
+  'app.record.index.edit.show',
+];
 
 const action: launcher.Action = async (event, pluginId) => {
   const config = restoreStorage(pluginId);
@@ -18,48 +18,33 @@ const action: launcher.Action = async (event, pluginId) => {
     }
 
     const fieldId = getFieldId(condition.field);
-
-    const wrapper =
-      document.querySelector<HTMLDivElement>(`.value-${fieldId} > div`) ||
-      document.querySelector<HTMLDivElement>(`.value-${fieldId}`);
-
-    if (!wrapper) {
-      return event;
+    const nativeInput = document.querySelector<HTMLInputElement>(`.value-${fieldId} input`);
+    if (nativeInput) {
+      nativeInput.type = 'month';
+      nativeInput.min = condition.min;
+      nativeInput.max = condition.max;
     }
+    // const wrapper =
+    //   document.querySelector<HTMLDivElement>(`.value-${fieldId} > div`) ||
+    //   document.querySelector<HTMLDivElement>(`.value-${fieldId}`);
+    // if (!wrapper) {
+    //   return event;
+    // }
 
-    if (!isMobile()) {
-      const fieldWrapper = document.querySelector(`.field-${fieldId}`);
+    // const nativeInput = document.querySelector<HTMLInputElement>(`.value-${fieldId} input`);
+    // if (nativeInput) {
+    //   nativeInput.style.display = 'none';
+    // }
 
-      if (fieldWrapper) {
-        const width = fieldWrapper.clientWidth;
+    // const div = document.createElement('div');
+    // wrapper.prepend(div);
 
-        fieldWrapper.classList.add(css`
-          width: ${width + 250}px !important;
-        `);
-      }
-    }
+    // const fieldValue = event.record[condition.field].value;
 
-    wrapper.classList.add(css`
-      display: flex;
-      align-items: center;
-      input {
-        min-width: 60px;
-      }
-    `);
+    // const initialValue = fieldValue ?? condition.min;
 
-    const div = document.createElement('div');
-    wrapper.prepend(div);
-    div.classList.add(css`
-      display: flex;
-      position: relative;
-      padding: 0 32px 0 24px;
-    `);
-
-    const fieldValue = event.record[condition.field].value;
-
-    const initialValue = isFinite(fieldValue) ? Number(fieldValue) : condition.min;
-
-    render(<App {...{ condition, initialValue }} />, div);
+    // const root = createRoot(div);
+    // root.render(<Input condition={condition} initialValue={initialValue} />);
   }
 
   console.log('プラグインが有効です', { pluginId, event, config });

@@ -11,7 +11,7 @@ type Props = Readonly<{ addCondition: () => void }>;
 const Component: VFC<Props> = ({ addCondition }) => (
   <button
     onClick={addCondition}
-    style={{ marginTop: '16px' }}
+    className="save"
   >
     新しい設定
   </button>
