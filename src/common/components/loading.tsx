@@ -1,10 +1,9 @@
 import React, { VFCX } from 'react';
-import styled from '@emotion/styled';
 
 type Props = Readonly<{ label: string }>;
 
-const Component: VFCX<Props> = ({ className, label }) => (
-  <div {...{ className }}>
+const Component: VFCX<Props> = ({  label }) => (
+  <div className="flex flex-col justify-center align-center gap-8">
     <div>
       {['#fc0', '#fd5', '#fff'].map((color, i) => (
         <svg key={i} viewBox='0 -87 463.83425 463' xmlns='http://www.w3.org/2000/svg'>
@@ -19,69 +18,69 @@ const Component: VFCX<Props> = ({ className, label }) => (
   </div>
 );
 
-const StyledComponent = styled(Component)`
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
+// const StyledComponent = styled(Component)`
+//   min-height: 400px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 32px;
 
-  > p {
-    color: #0007;
-    margin: 0;
-  }
+//   > p {
+//     color: #0007;
+//     margin: 0;
+//   }
 
-  > div {
-    width: 120px;
-    height: 120px;
-    position: relative;
+//   > div {
+//     width: 120px;
+//     height: 120px;
+//     position: relative;
 
-    svg {
-      filter: drop-shadow(2px 2px 3px #0002);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transition: all;
-      animation-name: fluffy;
-      animation-duration: 2s;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
+//     svg {
+//       filter: drop-shadow(2px 2px 3px #0002);
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transition: all;
+//       animation-name: fluffy;
+//       animation-duration: 2s;
+//       animation-timing-function: ease-in-out;
+//       animation-iteration-count: infinite;
 
-      &:nth-of-type(1) {
-        width: 100%;
-        height: 100%;
-        transform: translate(-60%, -50%);
-      }
-      &:nth-of-type(2) {
-        width: 75%;
-        height: 75%;
-        animation-delay: -0.2s;
-        transform: translate(-30%, -30%);
-      }
-      &:nth-of-type(3) {
-        width: 60%;
-        height: 60%;
-        animation-delay: -0.4s;
-        transform: translate(-100%, -20%);
-      }
-    }
+//       &:nth-of-type(1) {
+//         width: 100%;
+//         height: 100%;
+//         transform: translate(-60%, -50%);
+//       }
+//       &:nth-of-type(2) {
+//         width: 75%;
+//         height: 75%;
+//         animation-delay: -0.2s;
+//         transform: translate(-30%, -30%);
+//       }
+//       &:nth-of-type(3) {
+//         width: 60%;
+//         height: 60%;
+//         animation-delay: -0.4s;
+//         transform: translate(-100%, -20%);
+//       }
+//     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      width: 100%;
-      height: 20px;
-      background-image: radial-gradient(#0003 20%, #0001 40%, transparent 60%);
-    }
-  }
+//     &:before {
+//       content: '';
+//       position: absolute;
+//       bottom: -20px;
+//       width: 100%;
+//       height: 20px;
+//       background-image: radial-gradient(#0003 20%, #0001 40%, transparent 60%);
+//     }
+//   }
 
-  @keyframes fluffy {
-    50% {
-      top: 44%;
-    }
-  }
-`;
+//   @keyframes fluffy {
+//     50% {
+//       top: 44%;
+//     }
+//   }
+// `;
 
-export const Loading = StyledComponent;
+export const Loading = Component;

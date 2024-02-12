@@ -1,34 +1,23 @@
-import React, { Suspense, VFC } from 'react';
-import { RecoilRoot } from 'recoil';
-// import { SnackbarProvider } from 'notistack';
-
-import { restoreStorage } from '@common/plugin';
-import { ErrorBoundary } from '@common/components/error-boundary';
-
-import Form from './components/form';
-import Footer from './components/footer';
-
-import { pluginIdState, storageState } from './states';
+import React, { FormEvent, Suspense } from 'react';
+import Form from './components/Form';
+import ConditionAdditionButton from './components/Form/AddButton';
+import Footer from './components/Footer';
 import { Loading } from '@common/components/loading';
+import useCondition from './useCondition';
 
-const Component: VFC<{ pluginId: string }> = ({ pluginId }) => (
-  <>
-    <RecoilRoot
-      initializeState={({ set }) => {
-        set(pluginIdState, pluginId);
-        set(storageState, restoreStorage(pluginId));
-      }}
-    >
-      <ErrorBoundary>
-        {/* <SnackbarProvider maxSnack={1}> */}
-          <Suspense fallback={<Loading label='設定情報を取得しています' />}>
-            <Form />
-            <Footer />
-          </Suspense>
-        {/* </SnackbarProvider> */}
-      </ErrorBoundary>
-    </RecoilRoot>
-  </>
-);
+import "./app.css";
+function App({ pluginId }: { pluginId: string; }) {
+  const { conditions, setCondition, save, deleteCondition, addCondition } = useCondition(pluginId);
+  function onSubmit(e: FormEvent) {
+    e.preventDefault();
+    console.log({ e });
+    save(conditions);
+  }
+  return <Suspense fallback={<Loading label='設定情報を取得しています' />}>
+    <Form conditions={conditions} setCondition={setCondition} deleteCondition={deleteCondition} />
+    <ConditionAdditionButton add={addCondition} />
+    <Footer onSubmit={onSubmit} />
+  </Suspense>;
+}
 
-export default Component;
+export default App;

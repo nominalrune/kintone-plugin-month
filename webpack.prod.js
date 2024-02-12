@@ -8,7 +8,7 @@ module.exports = merge(common, {
   mode: 'production',
 
   output: {
-    path: path.resolve(__dirname, 'cdn'),
+    path: path.resolve(__dirname, 'plugin', 'js'),
     filename: '[name].js',
   },
   plugins: [

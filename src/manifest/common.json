@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "type": "APP",
   "name": {
-    "en": "kintone-plugin-month",
-    "ja": "年月入力プラグイン",
-    "zh": "kintone-plugin-month"
+    "en": "kintone-plugin-input",
+    "ja": "入力プラグイン",
+    "zh": "kintone-plugin-input"
   },
   "description": {
-    "en": "Implement the input using a month in the string field",
-    "ja": "文字列フィールドに年月入力を実装します",
-    "zh": "Implement the input using a month in the string field"
+    "en": "Implement the input using a input in the string field",
+    "ja": "文字列フィールドを別のtypeに変更します",
+    "zh": "Implement the input using a input in the string field"
   },
-  "icon": "image/month.png",
+  "icon": "image/input.png",
   "homepage_url": {
   },
   "desktop": {

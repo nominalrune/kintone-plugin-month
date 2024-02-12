@@ -1,7 +1,9 @@
+import { plugin } from '../types/plugin';
+
 /**
  * プラグインがアプリ単位で保存している設定情報を返却します
  */
-export const restoreStorage = (id: string): kintone.plugin.Storage => {
+export const restoreStorage = (id: string): plugin.Storage => {
   const config: Record<string, string> = kintone.plugin.app.getConfig(id);
 
   if (!Object.keys(config).length) {
@@ -28,14 +30,13 @@ export const storeStorage = (target: Record<string, any>, callback?: () => void)
 /**
  * プラグインの設定情報のひな形を返却します
  */
-const createConfig = (): kintone.plugin.Storage => ({
+const createConfig = (): plugin.Storage => ({
   conditions: [getNewCondition()],
 });
 
-export const getNewCondition = (): kintone.plugin.Condition => ({
+export const getNewCondition = (): plugin.Condition => ({
   field: '',
-  usesStep: false,
-  step: 10,
-  min: 0,
-  max: 100,
+  type:"text",
+  min: '',
+  max: '',
 });

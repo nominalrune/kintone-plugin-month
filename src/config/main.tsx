@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import App from './app';
+import App from './App';
 
 const main = (pluginId: string): void => {
   const rootEl =document.getElementById('settings');
